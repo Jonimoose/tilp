@@ -290,13 +290,14 @@
                                 <property name="tooltip" translatable="yes">http://education.ti.com, the Texas Instruments web site</property>
                                 <property name="label" translatable="yes">TI's web site</property>
                                 <property name="use_underline">True</property>
+                                <signal name="activate" handler="on_ti_s_web_site1_activate"/>
                               </widget>
                             </child>
                             <child>
                               <widget class="GtkMenuItem" id="calculator_software1">
                                 <property name="visible">True</property>
                                 <property name="has_tooltip">True</property>
-                                <property name="tooltip" translatable="yes">http://eps.ti.com, TI's store for OS upgrades and FLASH applications.</property>
+                                <property name="tooltip" translatable="yes">http://epsstore.ti.com, TI's store for OS upgrades and FLASH applications.</property>
                                 <property name="label" translatable="yes">Calculator software</property>
                                 <property name="use_underline">True</property>
                                 <signal name="activate" handler="on_calculator_software1_activate"/>
@@ -313,13 +314,13 @@
                               </widget>
                             </child>
                             <child>
-                              <widget class="GtkMenuItem" id="tinewsnet1">
+                              <widget class="GtkMenuItem" id="tibankfreefr1">
                                 <property name="visible">True</property>
                                 <property name="has_tooltip">True</property>
                                 <property name="tooltip" translatable="yes">A French calculator web site.</property>
-                                <property name="label" translatable="yes">tigen.org</property>
+                                <property name="label" translatable="yes">ti.bank.free.fr</property>
                                 <property name="use_underline">True</property>
-                                <signal name="activate" handler="on_tinewsnet1_activate"/>
+                                <signal name="activate" handler="on_tibankfreefr1_activate"/>
                               </widget>
                             </child>
                             <child>
