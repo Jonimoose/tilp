@@ -51,6 +51,8 @@ gint display_screenshot_dbox()
 		return 0; // THIS RETURNS !
 	}
 
+	gtk_builder_connect_signals(builder, NULL);
+
 	scrn_win = GTK_WIDGET (gtk_builder_get_object (builder, "screenshot_dbox"));
 	scrn_img = GTK_WIDGET (gtk_builder_get_object (builder, "pixmap7"));
 
