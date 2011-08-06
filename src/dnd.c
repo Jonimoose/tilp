@@ -88,14 +88,14 @@ void dnd_init(void)
 
 /* CList -> CTree */
 
-GLADE_CB void
+TILP_EXPORT void
 on_treeview2_drag_begin(GtkWidget * widget,
 			GdkDragContext * drag_context, gpointer user_data)
 {
 }
 
 // pass data
-GLADE_CB void
+TILP_EXPORT void
 on_treeview2_drag_data_get(GtkWidget * widget,
 			   GdkDragContext * drag_context,
 			   GtkSelectionData * data,
@@ -109,7 +109,7 @@ on_treeview2_drag_data_get(GtkWidget * widget,
 extern int on_tilp_send(const gchar*);
 
 // retrieve data
-GLADE_CB void
+TILP_EXPORT void
 on_treeview1_drag_data_received(GtkWidget * widget,
 				GdkDragContext * drag_context,
 				gint x,
@@ -202,7 +202,7 @@ on_treeview1_drag_data_received(GtkWidget * widget,
 extern gchar *name_to_drag;
 extern GtkTreePath *path_to_drag;
 
-GLADE_CB void
+TILP_EXPORT void
 on_treeview1_drag_begin(GtkWidget * widget,
 			GdkDragContext * drag_context, gpointer user_data)
 {
@@ -223,7 +223,7 @@ on_treeview1_drag_begin(GtkWidget * widget,
 		ctree_select_vars(!0);
 }
 
-GLADE_CB void
+TILP_EXPORT void
 on_treeview1_drag_data_get(GtkWidget * widget,
 			   GdkDragContext * drag_context,
 			   GtkSelectionData * data,
@@ -241,7 +241,7 @@ on_treeview1_drag_data_get(GtkWidget * widget,
 	}
 }
 
-GLADE_CB void
+TILP_EXPORT void
 on_treeview2_drag_data_received(GtkWidget * widget,
 				GdkDragContext * drag_context,
 				gint x,

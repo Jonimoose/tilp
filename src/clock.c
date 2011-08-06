@@ -161,21 +161,21 @@ gint display_clock_dbox()
 	return 0;
 }
 
-GLADE_CB void
+TILP_EXPORT void
 clock_radiobutton3_toggled(GtkToggleButton * togglebutton,
 			   gpointer user_data)
 {
 	tmp_clk.state = 1;
 } 
 
-GLADE_CB void
+TILP_EXPORT void
 clock_radiobutton4_toggled(GtkToggleButton * togglebutton,
 			   gpointer user_data)
 {
 	tmp_clk.state = 0;
 } 
 
-GLADE_CB void
+TILP_EXPORT void
 clock_radiobutton1_toggled(GtkToggleButton * togglebutton,
 			   gpointer user_data)
 {
@@ -183,7 +183,7 @@ clock_radiobutton1_toggled(GtkToggleButton * togglebutton,
 	modified = TRUE;
 } 
 
-GLADE_CB void
+TILP_EXPORT void
 clock_radiobutton2_toggled(GtkToggleButton * togglebutton,
 			   gpointer user_data)
 {
@@ -191,7 +191,7 @@ clock_radiobutton2_toggled(GtkToggleButton * togglebutton,
 	modified = TRUE;
 } 
 
-GLADE_CB void
+TILP_EXPORT void
 on_clock_combobox1_changed             (GtkComboBox     *combobox,
                                         gpointer         user_data)
 {
@@ -199,7 +199,7 @@ on_clock_combobox1_changed             (GtkComboBox     *combobox,
 	tmp_clk.month = nitem + 1;
 }
 
-GLADE_CB void
+TILP_EXPORT void
 on_clock_combobox2_changed             (GtkComboBox     *combobox,
                                         gpointer         user_data)
 {
@@ -207,7 +207,7 @@ on_clock_combobox2_changed             (GtkComboBox     *combobox,
 	tmp_clk.date_format = nitem + 1;
 }
 
-GLADE_CB void clock_spinbutton3_changed(GtkEditable * editable,
+TILP_EXPORT void clock_spinbutton3_changed(GtkEditable * editable,
 					gpointer user_data)
 {
 	tmp_clk.year =
@@ -215,7 +215,7 @@ GLADE_CB void clock_spinbutton3_changed(GtkEditable * editable,
 	modified = TRUE;
 } 
 
-GLADE_CB void clock_spinbutton4_changed(GtkEditable * editable,
+TILP_EXPORT void clock_spinbutton4_changed(GtkEditable * editable,
 					  gpointer user_data)
 {
 	tmp_clk.hours =
@@ -223,7 +223,7 @@ GLADE_CB void clock_spinbutton4_changed(GtkEditable * editable,
 	modified = TRUE;
 } 
 
-GLADE_CB void clock_spinbutton5_changed(GtkEditable * editable,
+TILP_EXPORT void clock_spinbutton5_changed(GtkEditable * editable,
 					  gpointer user_data)
 {
 	tmp_clk.minutes =
@@ -231,7 +231,7 @@ GLADE_CB void clock_spinbutton5_changed(GtkEditable * editable,
 	modified = TRUE;
 } 
 
-GLADE_CB void clock_spinbutton6_changed(GtkEditable * editable,
+TILP_EXPORT void clock_spinbutton6_changed(GtkEditable * editable,
 					  gpointer user_data)
 {
 	tmp_clk.seconds =
@@ -239,7 +239,7 @@ GLADE_CB void clock_spinbutton6_changed(GtkEditable * editable,
 	modified = TRUE;
 } 
 
-GLADE_CB void clock_spinbutton1_changed(GtkEditable * editable,
+TILP_EXPORT void clock_spinbutton1_changed(GtkEditable * editable,
 					  gpointer user_data)
 {
 	tmp_clk.day =
@@ -247,7 +247,7 @@ GLADE_CB void clock_spinbutton1_changed(GtkEditable * editable,
 	modified = TRUE;
 } 
 
-GLADE_CB void clock_sync_button_clicked(GtkButton * button,
+TILP_EXPORT void clock_sync_button_clicked(GtkButton * button,
 					  gpointer user_data)
 {
 	time_t tt;
