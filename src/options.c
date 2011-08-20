@@ -25,10 +25,8 @@
 #endif
 
 #include <gtk/gtk.h>
-#include <glade/glade.h>
 #include <string.h>
 
-#include "support.h"
 #include "options.h"
 #include "tilp_core.h"
 #include "clist.h"

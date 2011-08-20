@@ -24,7 +24,6 @@
 #include <string.h>
 #include <gtk/gtk.h>
 
-#include "support.h"
 #include "labels.h"
 #include "screenshot.h"
 #include "tilp.h"

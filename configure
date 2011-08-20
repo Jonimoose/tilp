@@ -704,8 +704,6 @@ LIBCOMPAT
 LIBUTIL
 LIBOBJS
 LIBZ
-GLADE_LIBS
-GLADE_CFLAGS
 GTK_LIBS
 GTK_CFLAGS
 GLIB_LIBS
@@ -916,8 +914,6 @@ GLIB_CFLAGS
 GLIB_LIBS
 GTK_CFLAGS
 GTK_LIBS
-GLADE_CFLAGS
-GLADE_LIBS
 XMKMF'
 
 
@@ -1616,9 +1612,6 @@ Some influential environment variables:
   GLIB_LIBS   linker flags for GLIB, overriding pkg-config
   GTK_CFLAGS  C compiler flags for GTK, overriding pkg-config
   GTK_LIBS    linker flags for GTK, overriding pkg-config
-  GLADE_CFLAGS
-              C compiler flags for GLADE, overriding pkg-config
-  GLADE_LIBS  linker flags for GLADE, overriding pkg-config
   XMKMF       Path to xmkmf, Makefile generator for X Window System
 
 Use these variables to override the choices made by `configure' or to help
@@ -3330,7 +3323,7 @@ fi
 
 ac_config_headers="$ac_config_headers config.h"
 
-ac_config_files="$ac_config_files Makefile build/Makefile build/mingw/Makefile builder/Makefile glade/Makefile help/Makefile icons/Makefile man/Makefile pixmaps/Makefile po/Makefile.in src/Makefile wicons/Makefile"
+ac_config_files="$ac_config_files Makefile build/Makefile build/mingw/Makefile builder/Makefile help/Makefile icons/Makefile man/Makefile pixmaps/Makefile po/Makefile.in src/Makefile wicons/Makefile"
 
 
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for something to drink while compiling" >&5
@@ -19202,100 +19195,6 @@ fi
 
 
 
-
-pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for GLADE" >&5
-$as_echo_n "checking for GLADE... " >&6; }
-
-if test -n "$GLADE_CFLAGS"; then
-    pkg_cv_GLADE_CFLAGS="$GLADE_CFLAGS"
- elif test -n "$PKG_CONFIG"; then
-    if test -n "$PKG_CONFIG" && \
-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libglade-2.0 >= 2.4.0\""; } >&5
-  ($PKG_CONFIG --exists --print-errors "libglade-2.0 >= 2.4.0") 2>&5
-  ac_status=$?
-  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-  test $ac_status = 0; }; then
-  pkg_cv_GLADE_CFLAGS=`$PKG_CONFIG --cflags "libglade-2.0 >= 2.4.0" 2>/dev/null`
-		      test "x$?" != "x0" && pkg_failed=yes
-else
-  pkg_failed=yes
-fi
- else
-    pkg_failed=untried
-fi
-if test -n "$GLADE_LIBS"; then
-    pkg_cv_GLADE_LIBS="$GLADE_LIBS"
- elif test -n "$PKG_CONFIG"; then
-    if test -n "$PKG_CONFIG" && \
-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libglade-2.0 >= 2.4.0\""; } >&5
-  ($PKG_CONFIG --exists --print-errors "libglade-2.0 >= 2.4.0") 2>&5
-  ac_status=$?
-  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-  test $ac_status = 0; }; then
-  pkg_cv_GLADE_LIBS=`$PKG_CONFIG --libs "libglade-2.0 >= 2.4.0" 2>/dev/null`
-		      test "x$?" != "x0" && pkg_failed=yes
-else
-  pkg_failed=yes
-fi
- else
-    pkg_failed=untried
-fi
-
-
-
-if test $pkg_failed = yes; then
-   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
-$as_echo "no" >&6; }
-
-if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
-        _pkg_short_errors_supported=yes
-else
-        _pkg_short_errors_supported=no
-fi
-        if test $_pkg_short_errors_supported = yes; then
-	        GLADE_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "libglade-2.0 >= 2.4.0" 2>&1`
-        else
-	        GLADE_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "libglade-2.0 >= 2.4.0" 2>&1`
-        fi
-	# Put the nasty error message in config.log where it belongs
-	echo "$GLADE_PKG_ERRORS" >&5
-
-	as_fn_error $? "Package requirements (libglade-2.0 >= 2.4.0) were not met:
-
-$GLADE_PKG_ERRORS
-
-Consider adjusting the PKG_CONFIG_PATH environment variable if you
-installed software in a non-standard prefix.
-
-Alternatively, you may set the environment variables GLADE_CFLAGS
-and GLADE_LIBS to avoid the need to call pkg-config.
-See the pkg-config man page for more details." "$LINENO" 5
-elif test $pkg_failed = untried; then
-     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
-$as_echo "no" >&6; }
-	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
-$as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
-as_fn_error $? "The pkg-config script could not be found or is too old.  Make sure it
-is in your PATH or set the PKG_CONFIG environment variable to the full
-path to pkg-config.
-
-Alternatively, you may set the environment variables GLADE_CFLAGS
-and GLADE_LIBS to avoid the need to call pkg-config.
-See the pkg-config man page for more details.
-
-To get pkg-config, see <http://pkg-config.freedesktop.org/>.
-See \`config.log' for more details" "$LINENO" 5; }
-else
-	GLADE_CFLAGS=$pkg_cv_GLADE_CFLAGS
-	GLADE_LIBS=$pkg_cv_GLADE_LIBS
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
-$as_echo "yes" >&6; }
-
-fi
-
-
-
 # Check for zlib
 ac_fn_c_check_header_mongrel "$LINENO" "zlib.h" "ac_cv_header_zlib_h" "$ac_includes_default"
 if test "x$ac_cv_header_zlib_h" = xyes; then :
@@ -22387,7 +22286,7 @@ for i in $jpeg_incdirs;
 do
   for j in jpeglib.h;
   do
-    echo "configure: 22390: $i/$j" >&5
+    echo "configure: 22289: $i/$j" >&5
     if test -r "$i/$j"; then
       echo "taking that" >&5
       jpeg_incdir=$i
@@ -22620,7 +22519,7 @@ for i in $qt_incdirs;
 do
   for j in $kde_qt_header;
   do
-    echo "configure: 22623: $i/$j" >&5
+    echo "configure: 22522: $i/$j" >&5
     if test -r "$i/$j"; then
       echo "taking that" >&5
       qt_incdir=$i
@@ -23373,7 +23272,7 @@ for i in $kde_incdirs;
 do
   for j in $kde_check_header;
   do
-    echo "configure: 23376: $i/$j" >&5
+    echo "configure: 23275: $i/$j" >&5
     if test -r "$i/$j"; then
       echo "taking that" >&5
       kde_incdir=$i
@@ -23398,7 +23297,7 @@ for i in $kde_libdirs;
 do
   for j in $kde_check_lib;
   do
-    echo "configure: 23401: $i/$j" >&5
+    echo "configure: 23300: $i/$j" >&5
     if test -r "$i/$j"; then
       echo "taking that" >&5
       kde_libdir=$i
@@ -25630,7 +25529,6 @@ do
     "build/Makefile") CONFIG_FILES="$CONFIG_FILES build/Makefile" ;;
     "build/mingw/Makefile") CONFIG_FILES="$CONFIG_FILES build/mingw/Makefile" ;;
     "builder/Makefile") CONFIG_FILES="$CONFIG_FILES builder/Makefile" ;;
-    "glade/Makefile") CONFIG_FILES="$CONFIG_FILES glade/Makefile" ;;
     "help/Makefile") CONFIG_FILES="$CONFIG_FILES help/Makefile" ;;
     "icons/Makefile") CONFIG_FILES="$CONFIG_FILES icons/Makefile" ;;
     "man/Makefile") CONFIG_FILES="$CONFIG_FILES man/Makefile" ;;

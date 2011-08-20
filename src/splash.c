@@ -24,11 +24,9 @@
 #endif				/*  */
 
 #include <gtk/gtk.h>
-#include <glade/glade.h>
 #include <stdlib.h>
 #include <string.h>
 
-#include "support.h"
 #include "tilp_version.h"
 #include "tilp_core.h"
 #include "gtk_update.h"

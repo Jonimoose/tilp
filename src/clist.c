@@ -26,7 +26,6 @@
 #include <gtk/gtk.h>
 
 #include "gstruct.h"
-#include "support.h"
 #include "labels.h"
 #include "clist_rbm.h"
 #include "tilp_core.h"

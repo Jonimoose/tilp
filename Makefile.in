@@ -98,8 +98,7 @@ AM_RECURSIVE_TARGETS = $(RECURSIVE_TARGETS:-recursive=) \
 	distdir dist dist-all distcheck
 ETAGS = etags
 CTAGS = ctags
-DIST_SUBDIRS = build builder glade help icons pixmaps po src wicons \
-	man
+DIST_SUBDIRS = build builder help icons pixmaps po src wicons man
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
 top_distdir = $(distdir)
@@ -169,8 +168,6 @@ ECHO_T = @ECHO_T@
 EGREP = @EGREP@
 EXEEXT = @EXEEXT@
 FGREP = @FGREP@
-GLADE_CFLAGS = @GLADE_CFLAGS@
-GLADE_LIBS = @GLADE_LIBS@
 GLIB_CFLAGS = @GLIB_CFLAGS@
 GLIB_LIBS = @GLIB_LIBS@
 GMSGFMT = @GMSGFMT@
@@ -375,7 +372,7 @@ x_libraries = @x_libraries@
 ACLOCAL_AMFLAGS = -I m4
 
 # subdirectories to scan
-SUBDIRS = build builder glade help icons pixmaps po src wicons \
+SUBDIRS = build builder help icons pixmaps po src wicons \
 	$(am__append_1)
 dist_pkgdata_DATA = COPYING RELEASE
 EXTRA_DIST = README.* TODO po/copy.bat desktop install.bat

@@ -26,13 +26,11 @@
 #include <stdio.h>
 #include <string.h>
 #include <gtk/gtk.h>
-#include <glade/glade.h>
 #ifdef __WIN32__
 #include <direct.h>     // _getdrive
 #include <windows.h>
 #endif
 
-#include "support.h"
 #include "clist.h"
 #include "labels.h"
 #include "dboxes.h"

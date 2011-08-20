@@ -19,7 +19,6 @@ AC_CONFIG_FILES([
   build/Makefile
   build/mingw/Makefile
   builder/Makefile
-  glade/Makefile
   help/Makefile
   icons/Makefile
   man/Makefile
@@ -77,10 +76,6 @@ AC_SUBST(GLIB_LIBS)
 PKG_CHECK_MODULES(GTK, gtk+-2.0 >= 2.12.0)
 AC_SUBST(GTK_CFLAGS)
 AC_SUBST(GTK_LIBS)
-
-PKG_CHECK_MODULES(GLADE, libglade-2.0 >= 2.4.0)
-AC_SUBST(GLADE_CFLAGS)
-AC_SUBST(GLADE_LIBS)
 
 # Check for zlib
 AC_CHECK_HEADER(zlib.h)

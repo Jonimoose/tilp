@@ -32,6 +32,7 @@
 
 #include <glib.h>
 #include <glib/gstdio.h>
+#include <gtk/gtk.h>
 
 #include "tilp_core.h"
 
@@ -64,8 +65,6 @@ static void init_linux_paths(void)
 	    g_strconcat(inst_paths.base_dir, "help/", NULL);
 	inst_paths.manpage_dir = 
             g_strconcat(inst_paths.base_dir, "", NULL);
-	inst_paths.glade_dir =
-	    g_strconcat(inst_paths.base_dir, "glade/", NULL);
 	inst_paths.builder_dir =
 	    g_strconcat(inst_paths.base_dir, "builder/", NULL);
 	inst_paths.home_dir =
@@ -122,8 +121,6 @@ static void init_win32_paths(void)
 	    g_strconcat(inst_paths.base_dir, "help\\", NULL);
 	inst_paths.manpage_dir =
 	    g_strconcat(inst_paths.base_dir, "", NULL);
-	inst_paths.glade_dir =
-	    g_strconcat(inst_paths.base_dir, "glade\\", NULL);
 	inst_paths.builder_dir =
 	    g_strconcat(inst_paths.base_dir, "builder\\", NULL);
 	#ifdef __MINGW32__
@@ -164,16 +161,6 @@ int tilp_paths_init(void)
 	return 0;
 }
 
-const char *tilp_paths_build_glade(const char *name)
-{
-	static char *path = NULL;
-
-	g_free(path);
-	path = g_strconcat(inst_paths.glade_dir, name, NULL);
-
-	return path;
-}
-
 const char *tilp_paths_build_builder(const char *name)
 {
 	static char *path = NULL;
@@ -183,3 +170,31 @@ const char *tilp_paths_build_builder(const char *name)
 
 	return path;
 }
+
+GdkPixbuf *create_pixbuf(const gchar * filename)
+{
+	gchar *pathname = NULL;
+	GdkPixbuf *pixbuf;
+	GError *error = NULL;
+	if (!filename || !filename[0])
+	    return NULL;
+	pathname = g_strconcat(inst_paths.pixmap_dir, filename, NULL);
+	if (!(g_file_test(pathname, G_FILE_TEST_EXISTS))) {
+	    pathname = g_strconcat(inst_paths.icon_dir, filename, NULL);
+	    if (!(g_file_test(pathname, G_FILE_TEST_EXISTS))){
+		tilp_warning(_("Couldn't find pixmap file: %s: s\n"),
+			pathname, error->message);
+		return NULL;
+	    }
+	}
+	pixbuf = gdk_pixbuf_new_from_file(pathname, &error);
+	if (!pixbuf) {
+	    tilp_warning(_("Failed to load pixbuf file: %s: %s\n"),
+			pathname, error->message);
+	    g_error_free(error);
+	}
+	g_free(pathname);
+	return pixbuf;
+}
+
+

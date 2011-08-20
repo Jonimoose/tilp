@@ -3,7 +3,7 @@
 ACLOCAL_AMFLAGS=-I m4
 
 # subdirectories to scan
-SUBDIRS = build builder glade help icons pixmaps po src wicons
+SUBDIRS = build builder help icons pixmaps po src wicons
 
 if USE_GROFF
   SUBDIRS += man

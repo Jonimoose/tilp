@@ -22,11 +22,8 @@
 #endif
 
 #include <gtk/gtk.h>
-#include <glade/glade.h>
 #include <stdlib.h>
 #include <string.h>
-
-#include "support.h"
 
 #include "gstruct.h"
 #include "tilp_core.h"

@@ -27,6 +27,7 @@
 #define __TILP_PATHS__
 
 #include <stdio.h>
+#include <gtk/gtk.h>
 
 /* Paths */
 #if defined(__LINUX__) || defined(__BSD__) || defined(__MACOSX__)
@@ -50,7 +51,6 @@ typedef struct
     gchar *help_dir;		// help files
     gchar *pixmap_dir;		// pixmaps
     gchar *icon_dir;		// icons
-    gchar *glade_dir;		// directory of files for Glade
     gchar *builder_dir;		// $HOME
     gchar *home_dir;		// $HOME
 } TilpInstPaths;
@@ -58,7 +58,9 @@ typedef struct
 extern TilpInstPaths	inst_paths;
 
 int tilp_paths_init(void);
-const char *tilp_paths_build_glade(const char *name);
 const char *tilp_paths_build_builder(const char *name);
+
+/* This is used to create the pixbufs used in the interface. */
+GdkPixbuf *create_pixbuf(const gchar * filename);
 
 #endif

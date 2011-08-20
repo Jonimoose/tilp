@@ -24,7 +24,6 @@
 #endif				
 
 #include <gtk/gtk.h>
-#include <glade/glade.h>
 
 #include "tilp_core.h"
 #include "gstruct.h"

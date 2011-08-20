@@ -22,11 +22,9 @@
 #endif				/*  */
 
 #include <gtk/gtk.h>
-#include <glade/glade.h>
 #include <stdlib.h>
 #include <string.h>
 
-#include "support.h"
 #include "ctree.h"
 #include "tilp.h"
 #include "screenshot.h"

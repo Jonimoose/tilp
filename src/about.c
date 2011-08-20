@@ -25,14 +25,12 @@
 #endif
 
 #include <gtk/gtk.h>
-#include <glade/glade.h>
 #include <string.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 
 #include "about.h"
-#include "support.h"
 #include "tilp_core.h"
 
 static const char* authors[] =  

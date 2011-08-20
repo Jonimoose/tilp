@@ -26,9 +26,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <gtk/gtk.h>
-#include <glade/glade.h>
 
-#include "support.h"
 #include "gstruct.h"
 #include "device.h"
 #include "toolbar.h"

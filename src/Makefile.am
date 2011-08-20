@@ -8,7 +8,7 @@ bin_PROGRAMS = tilp
 # build instructions
 tilp_CPPFLAGS = -I$(top_srcdir)/intl \
 	@TICABLES_CFLAGS@ @TIFILES_CFLAGS@ @TICALCS_CFLAGS@ @TICONV_CFLAGS@ \
-	@GLIB_CFLAGS@ @GTK_CFLAGS@ @GLADE_CFLAGS@ \
+	@GLIB_CFLAGS@ @GTK_CFLAGS@ \
 	@KDE_INCLUDES@ @QT_INCLUDES@ \
 	-DSHARE_DIR=\"$(pkgdatadir)\" \
 	-DLOCALEDIR=\"$(datadir)/locale\" \
@@ -16,7 +16,7 @@ tilp_CPPFLAGS = -I$(top_srcdir)/intl \
 	-DGTK_DISABLE_DEPRECATED
 tilp_LDFLAGS = -export-dynamic
 tilp_LDADD = @TICABLES_LIBS@ @TIFILES_LIBS@ @TICALCS_LIBS@ @TICONV_LIBS@ \
-	@GLIB_LIBS@ @GTK_LIBS@ @GLADE_LIBS@ \
+	@GLIB_LIBS@ @GTK_LIBS@ \
 	@LIB_KDECORE@ @LIB_KDEUI@ @LIB_KIO@ @LIB_QT@ @KDE_LDFLAGS@ \
 	@QT_LDFLAGS@ @X_LDFLAGS@ \
 	@LTLIBINTL@ @LIBZ@
@@ -29,7 +29,7 @@ tilp_SOURCES = *.h \
 	about.c action.c bookmark.c clist.c clist_rbm.c clock.c \
 	ctree.c ctree_rbm.c dboxes.c device.c dnd.c filesel.c \
 	gtk_gif.c gtk_update.c labels.c manpage.c options.c pbars.c \
-	release.c screenshot.c scroptions.c splash.c support.c \
+	release.c screenshot.c scroptions.c splash.c \
 	toolbar.c fileprop.c
 
 if OS_WIN32

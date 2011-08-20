@@ -25,12 +25,10 @@
 #endif				/*  */
 
 #include <gtk/gtk.h>
-#include <glade/glade.h>
 #include <stdlib.h>
 #include <string.h>
 
 #include "action.h"
-#include "support.h"
 #include "tilp_core.h"
 #include "ctree.h"
 #include "labels.h"

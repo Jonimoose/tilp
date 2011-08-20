@@ -64,8 +64,8 @@ am__tilp_SOURCES_DIST = *.h tilp_calcs.c tilp_cmdline.c tilp_config.c \
 	action.c bookmark.c clist.c clist_rbm.c clock.c ctree.c \
 	ctree_rbm.c dboxes.c device.c dnd.c filesel.c gtk_gif.c \
 	gtk_update.c labels.c manpage.c options.c pbars.c release.c \
-	screenshot.c scroptions.c splash.c support.c toolbar.c \
-	fileprop.c kde.cpp
+	screenshot.c scroptions.c splash.c toolbar.c fileprop.c \
+	kde.cpp
 @USE_KDE_TRUE@am__objects_1 = tilp-kde.$(OBJEXT)
 am_tilp_OBJECTS = tilp-tilp_calcs.$(OBJEXT) \
 	tilp-tilp_cmdline.$(OBJEXT) tilp-tilp_config.$(OBJEXT) \
@@ -86,9 +86,8 @@ am_tilp_OBJECTS = tilp-tilp_calcs.$(OBJEXT) \
 	tilp-manpage.$(OBJEXT) tilp-options.$(OBJEXT) \
 	tilp-pbars.$(OBJEXT) tilp-release.$(OBJEXT) \
 	tilp-screenshot.$(OBJEXT) tilp-scroptions.$(OBJEXT) \
-	tilp-splash.$(OBJEXT) tilp-support.$(OBJEXT) \
-	tilp-toolbar.$(OBJEXT) tilp-fileprop.$(OBJEXT) \
-	$(am__objects_1)
+	tilp-splash.$(OBJEXT) tilp-toolbar.$(OBJEXT) \
+	tilp-fileprop.$(OBJEXT) $(am__objects_1)
 @USE_KDE_TRUE@nodist_tilp_OBJECTS = tilp-kde-private.$(OBJEXT)
 tilp_OBJECTS = $(am_tilp_OBJECTS) $(nodist_tilp_OBJECTS)
 tilp_LINK = $(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
@@ -154,8 +153,6 @@ ECHO_T = @ECHO_T@
 EGREP = @EGREP@
 EXEEXT = @EXEEXT@
 FGREP = @FGREP@
-GLADE_CFLAGS = @GLADE_CFLAGS@
-GLADE_LIBS = @GLADE_LIBS@
 GLIB_CFLAGS = @GLIB_CFLAGS@
 GLIB_LIBS = @GLIB_LIBS@
 GMSGFMT = @GMSGFMT@
@@ -362,7 +359,7 @@ AM_CFLAGS = -Wall
 # build instructions
 tilp_CPPFLAGS = -I$(top_srcdir)/intl \
 	@TICABLES_CFLAGS@ @TIFILES_CFLAGS@ @TICALCS_CFLAGS@ @TICONV_CFLAGS@ \
-	@GLIB_CFLAGS@ @GTK_CFLAGS@ @GLADE_CFLAGS@ \
+	@GLIB_CFLAGS@ @GTK_CFLAGS@ \
 	@KDE_INCLUDES@ @QT_INCLUDES@ \
 	-DSHARE_DIR=\"$(pkgdatadir)\" \
 	-DLOCALEDIR=\"$(datadir)/locale\" \
@@ -371,7 +368,7 @@ tilp_CPPFLAGS = -I$(top_srcdir)/intl \
 
 tilp_LDFLAGS = -export-dynamic $(am__append_1)
 tilp_LDADD = @TICABLES_LIBS@ @TIFILES_LIBS@ @TICALCS_LIBS@ @TICONV_LIBS@ \
-	@GLIB_LIBS@ @GTK_LIBS@ @GLADE_LIBS@ \
+	@GLIB_LIBS@ @GTK_LIBS@ \
 	@LIB_KDECORE@ @LIB_KDEUI@ @LIB_KIO@ @LIB_QT@ @KDE_LDFLAGS@ \
 	@QT_LDFLAGS@ @X_LDFLAGS@ \
 	@LTLIBINTL@ @LIBZ@
@@ -383,8 +380,8 @@ tilp_SOURCES = *.h tilp_calcs.c tilp_cmdline.c tilp_config.c \
 	action.c bookmark.c clist.c clist_rbm.c clock.c ctree.c \
 	ctree_rbm.c dboxes.c device.c dnd.c filesel.c gtk_gif.c \
 	gtk_update.c labels.c manpage.c options.c pbars.c release.c \
-	screenshot.c scroptions.c splash.c support.c toolbar.c \
-	fileprop.c $(am__append_2)
+	screenshot.c scroptions.c splash.c toolbar.c fileprop.c \
+	$(am__append_2)
 @OS_WIN32_TRUE@tilp_DEPENDENCIES = ../build/mingw/tilp-rc.o
 @USE_KDE_TRUE@nodist_tilp_SOURCES = kde-private.cpp
 @USE_KDE_TRUE@CLEANFILES = kde-private.cpp
@@ -502,7 +499,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tilp-screenshot.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tilp-scroptions.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tilp-splash.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tilp-support.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tilp-tilp.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tilp-tilp_calcs.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tilp-tilp_cmdline.Po@am__quote@
@@ -1087,20 +1083,6 @@ tilp-splash.obj: splash.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='splash.c' object='tilp-splash.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(tilp_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o tilp-splash.obj `if test -f 'splash.c'; then $(CYGPATH_W) 'splash.c'; else $(CYGPATH_W) '$(srcdir)/splash.c'; fi`
-
-tilp-support.o: support.c
-@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(tilp_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT tilp-support.o -MD -MP -MF $(DEPDIR)/tilp-support.Tpo -c -o tilp-support.o `test -f 'support.c' || echo '$(srcdir)/'`support.c
-@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/tilp-support.Tpo $(DEPDIR)/tilp-support.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='support.c' object='tilp-support.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(tilp_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o tilp-support.o `test -f 'support.c' || echo '$(srcdir)/'`support.c
-
-tilp-support.obj: support.c
-@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(tilp_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT tilp-support.obj -MD -MP -MF $(DEPDIR)/tilp-support.Tpo -c -o tilp-support.obj `if test -f 'support.c'; then $(CYGPATH_W) 'support.c'; else $(CYGPATH_W) '$(srcdir)/support.c'; fi`
-@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/tilp-support.Tpo $(DEPDIR)/tilp-support.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='support.c' object='tilp-support.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(tilp_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o tilp-support.obj `if test -f 'support.c'; then $(CYGPATH_W) 'support.c'; else $(CYGPATH_W) '$(srcdir)/support.c'; fi`
 
 tilp-toolbar.o: toolbar.c
 @am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(tilp_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT tilp-toolbar.o -MD -MP -MF $(DEPDIR)/tilp-toolbar.Tpo -c -o tilp-toolbar.o `test -f 'toolbar.c' || echo '$(srcdir)/'`toolbar.c

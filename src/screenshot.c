@@ -24,10 +24,8 @@
 #endif				/*  */
 
 #include <gtk/gtk.h>
-#include <glade/glade.h>
 #include <string.h>
 
-#include "support.h"
 #include "screenshot.h"
 #include "dboxes.h"
 #include "scroptions.h"

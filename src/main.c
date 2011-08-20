@@ -29,7 +29,6 @@
 #include <string.h>
 #include <signal.h>		// for managing some signals
 
-#include <glade/glade.h>
 #include <gtk/gtk.h>
 #include <glib.h>
 
@@ -41,7 +40,6 @@
 #include "kde.h"
 #endif
 
-#include "support.h"
 #include "splash.h"
 #include "tilp.h"
 #include "toolbar.h"
@@ -75,8 +73,6 @@ int main(int argc, char *argv[])
 
 	/* Init GTK+ */
 	gtk_init(&argc, &argv);
-	add_pixmap_directory(inst_paths.pixmap_dir);
-	add_pixmap_directory(inst_paths.icon_dir);
 	splash_screen_start();
 
 	/*

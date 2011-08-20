@@ -23,7 +23,6 @@
 
 #include "tilp_core.h"
 #include "gstruct.h"
-#include "support.h"
 
 struct toolbar_window toolbar_wnd = { 0 };
 struct menubar_window menubar_wnd = { 0 };

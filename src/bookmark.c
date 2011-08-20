@@ -29,7 +29,7 @@
 
 #include "dboxes.h"
 #include "intl.h"
-#include "support.h"
+#include "tilp_paths.h"
 
 int go_to_bookmark(const char *link)
 {

@@ -24,7 +24,6 @@
 #endif
 
 #include <gtk/gtk.h>
-#include <glade/glade.h>
 #include <string.h>
 #include <unistd.h>
 #include <sys/types.h>
